@@ -1,8 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "AddUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
-
-<h1>@ViewBag.FirstName</h1>
+@model LabTwenty.Models.UserInfo
+<h2>AddUsers</h2>
+<h1>Welcome: @Model.UserLastName, @Model.UserFirstName</h1>
 
