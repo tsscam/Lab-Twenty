@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin</h2>
+
+<a href="/Home/Add"> Add a new Item </a>
+
+<table border="1">
+    <tr>
+        <th>Coffee Selection</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var element in ViewBag.ItemList)
+    {
+        <tr>
+            <td>@element.Name </td>
+            <td>@element.Description</td>
+            <td>@element.Quantity</td>
+            <td>@element.Price</td>
+            <td><a href="Delete?Name=@element.Name" onclick="return confirm ('Are you confirming a DELETE?')"><span class="glyphicon glyphicon-trash"></span></a></td>
+            <td><a href="Update?Name=@element.Name">Update</a></td>
+        </tr>
+    }
+</table>
